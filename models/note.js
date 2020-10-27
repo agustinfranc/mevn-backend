@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 const noteSchema = new Schema({
   name: { type: String, required: [true, "Name is required"] },
-  desciption: String,
+  description: String,
   user_id: String,
   date: { type: Date, default: Date.now },
   disabled: { type: Boolean, default: false },
