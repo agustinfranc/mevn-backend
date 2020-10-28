@@ -9,7 +9,8 @@ import mongoose from "mongoose";
 
 const app = express();
 const port = 3500;
-const uri = "mongodb://localhost:27017/mevn";
+// const uri = "mongodb://localhost:27017/mevn";
+const uri = "mongodb+srv://agustin96:u3RsiHXjyTleWty7@personal.kc5mn.mongodb.net/notes?retryWrites=true&w=majority";
 const options = {
   useNewUrlParser: true,
   useCreateIndex: true,
