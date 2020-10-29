@@ -33,6 +33,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Rutas
 app.use("/api", require("./routes/note"));
+app.use("/api", require("./routes/user"));
 
 // Middleware para Vue.js router modo history
 // https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations

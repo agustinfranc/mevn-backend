@@ -20,5 +20,9 @@ npm i -D @babel/core @babel/cli @babel/preset-env @babel/node
 Mongoose
 https://mongoosejs.com/docs/index.html
 
+Mongoose Validator
+https://www.npmjs.com/package/mongoose-unique-validator
+npm i --save mongoose-unique-validator
+
 Heroku deployed on:
 [...]
