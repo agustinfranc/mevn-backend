@@ -24,5 +24,13 @@ Mongoose Validator
 https://www.npmjs.com/package/mongoose-unique-validator
 npm i --save mongoose-unique-validator
 
+bcrypt
+https://www.npmjs.com/package/bcrypt
+npm i --save bcrypt
+
+Underscore
+https://underscorejs.org/
+npm i --save underscore
+
 Heroku deployed on:
 [...]

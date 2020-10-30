@@ -8,7 +8,7 @@ const roles = {
 
 const userSchema = new Schema({
   name: { type: String, required: [true, "Name is required"] },
-  email: { 
+  email: {
     type: String,
     required: [true, "Email is required"],
     unique: true,
@@ -20,6 +20,13 @@ const userSchema = new Schema({
 });
 
 userSchema.plugin(uniqueValidator, { message: 'Error, expected {PATH} to be unique.' });
+
+// Hide password
+/* userSchema.methods.toJSON = () => {
+  const obj = this.toObject();
+  delete obj.password;
+  return obj;
+} */
 
 const User = mongoose.model("User", userSchema);
 
