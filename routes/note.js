@@ -8,7 +8,10 @@ router.get("/notes", async (req, res) => {
     const note = await Note.find();
     return res.json(note);
   } catch (error) {
-    return res.status(400).json({ error });
+    return res.status(500).json({
+      error: { message: error.message, name: error.name, stack: error.stack },
+      message: "Ups, something went wrong",
+    });
   }
 });
 
@@ -19,7 +22,10 @@ router.post("/notes", async (req, res) => {
     const note = await Note.create(body);
     return res.json(note);
   } catch (error) {
-    return res.status(500).json({ error });
+    return res.status(500).json({
+      error: { message: error.message, name: error.name, stack: error.stack },
+      message: "Ups, something went wrong",
+    });
   }
 });
 
@@ -35,7 +41,10 @@ router.get("/notes/:id", async (req, res) => {
 
     return res.json(note);
   } catch (error) {
-    return res.status(500).json({ error });
+    return res.status(500).json({
+      error: { message: error.message, name: error.name, stack: error.stack },
+      message: "Ups, something went wrong",
+    });
   }
 });
 
@@ -52,7 +61,10 @@ router.put("/notes/:id", async (req, res) => {
 
     return res.json(note);
   } catch (error) {
-    return res.status(500).json({ error });
+    return res.status(500).json({
+      error: { message: error.message, name: error.name, stack: error.stack },
+      message: "Ups, something went wrong",
+    });
   }
 });
 
@@ -68,7 +80,10 @@ router.delete("/notes/:id", async (req, res) => {
 
     return res.json(note);
   } catch (error) {
-    return res.status(500).json({ error });
+    return res.status(500).json({
+      error: { message: error.message, name: error.name, stack: error.stack },
+      message: "Ups, something went wrong",
+    });
   }
 });
 

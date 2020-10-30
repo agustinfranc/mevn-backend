@@ -12,7 +12,10 @@ router.get("/users", async (req, res) => {
 
     return res.json(users);
   } catch (error) {
-    return res.status(500).json({ error });
+    return res.status(500).json({
+      error: { message: error.message, name: error.name, stack: error.stack },
+      message: "Ups, something went wrong",
+    });
   }
 });
 
@@ -27,7 +30,10 @@ router.post("/users", async (req, res) => {
 
     return res.json(user);
   } catch (error) {
-    return res.status(500).json({ error });
+    return res.status(500).json({
+      error: { message: error.message, name: error.name, stack: error.stack },
+      message: "Ups, something went wrong",
+    });
   }
 });
 
@@ -39,7 +45,10 @@ router.get("/users/:id", async (req, res) => {
 
     return res.json(user);
   } catch (error) {
-    return res.status(500).json({ error });
+    return res.status(500).json({
+      error: { message: error.message, name: error.name, stack: error.stack },
+      message: "Ups, something went wrong",
+    });
   }
 });
 
@@ -58,7 +67,10 @@ router.put("/users/:id", async (req, res) => {
 
     return res.json(user);
   } catch (error) {
-    return res.status(500).json({ error });
+    return res.status(500).json({
+      error: { message: error.message, name: error.name, stack: error.stack },
+      message: "Ups, something went wrong",
+    });
   }
 });
 
