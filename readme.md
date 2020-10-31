@@ -32,5 +32,9 @@ Underscore
 https://underscorejs.org/
 npm i --save underscore
 
+jsonwebtoken
+https://www.npmjs.com/package/jsonwebtoken
+npm i --save jsonwebtoken
+
 Heroku deployed on:
 [...]
