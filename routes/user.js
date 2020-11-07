@@ -2,6 +2,7 @@ import express from "express";
 import User from "../models/user";
 import bcrypt from "bcrypt";
 import _ from "underscore";
+import { verifyAuth, verifyAdmin } from "../middlewares/authentication";
 
 const router = express.Router();
 const salt = 10;
@@ -52,7 +53,7 @@ router.get("/users/:id", async (req, res) => {
   }
 });
 
-router.put("/users/:id", async (req, res) => {
+router.put("/users/:id", [verifyAuth, verifyAdmin], async (req, res) => {
   const _id = req.params.id;
   const body = _.pick(req.body, ["name", "email", "password", "active"]);
 

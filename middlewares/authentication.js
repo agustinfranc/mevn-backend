@@ -1,9 +1,32 @@
-const verifyAuth = (req, res, next) => {
-    //
+import jsonwebtoken from "jsonwebtoken";
 
-    res.json({
-        message: 'message',
-    })
+const verifyAuth = (req, res, next) => {
+  const token = req.get("token");
+
+  jsonwebtoken.verify(token, "secret", (err, decoded) => {
+    if (err) {
+      return res.status(401).json({
+        message: "Not Authenticated",
+        error: err,
+      });
+    }
+
+    req.user = decoded.data;
+
+    next();
+  });
 };
 
-module.exports = { verifyAuth };
+const verifyAdmin = (req, res, next) => {
+  const role = req.user.role;
+
+  if (role != 'ADMIN') {
+    return res.status(401).json({
+      message: "Not Authorized",
+    })
+  }
+
+  next();
+};
+
+module.exports = { verifyAuth, verifyAdmin };

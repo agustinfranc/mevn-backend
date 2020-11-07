@@ -1,11 +1,12 @@
 import express from "express";
 import Note from "../models/note";
+import { verifyAuth, verifyAdmin } from "../middlewares/authentication";
 
 const router = express.Router();
 
-router.get("/notes", async (req, res) => {
+router.get("/notes", verifyAuth, async (req, res) => {
   try {
-    const note = await Note.find();
+    const note = await Note.find({user_id: req.user._id});
     return res.json(note);
   } catch (error) {
     return res.status(500).json({
@@ -15,8 +16,9 @@ router.get("/notes", async (req, res) => {
   }
 });
 
-router.post("/notes", async (req, res) => {
+router.post("/notes", verifyAuth, async (req, res) => {
   const body = req.body;
+  body.user_id = req.user._id;
 
   try {
     const note = await Note.create(body);
@@ -29,7 +31,7 @@ router.post("/notes", async (req, res) => {
   }
 });
 
-router.get("/notes/:id", async (req, res) => {
+router.get("/notes/:id", verifyAuth, async (req, res) => {
   const _id = req.params.id;
 
   try {
@@ -48,7 +50,7 @@ router.get("/notes/:id", async (req, res) => {
   }
 });
 
-router.put("/notes/:id", async (req, res) => {
+router.put("/notes/:id", verifyAuth, async (req, res) => {
   const _id = req.params.id;
   const body = req.body;
 
@@ -68,7 +70,7 @@ router.put("/notes/:id", async (req, res) => {
   }
 });
 
-router.delete("/notes/:id", async (req, res) => {
+router.delete("/notes/:id", verifyAuth, async (req, res) => {
   const _id = req.params.id;
 
   try {
