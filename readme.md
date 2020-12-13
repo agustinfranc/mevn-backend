@@ -12,43 +12,46 @@
 
 *************************************
 
-ExpressJS
+## Dependencies
+
+- ExpressJS
 https://expressjs.com/es/starter/installing.html
 
-Nodemon
+- Nodemon
 https://www.npmjs.com/package/nodemon
 
-Morgan
+- Morgan
 https://www.npmjs.com/package/morgan
 
-CORS
+- CORS
 http://expressjs.com/en/resources/middleware/cors.html
 
-Various
-https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations
-https://www.npmjs.com/package/connect-history-api-fallback
-
-Babel
+- Babel
 npm i -D @babel/core @babel/cli @babel/preset-env @babel/node
 
-Mongoose
+- Mongoose
 https://mongoosejs.com/docs/index.html
 
-Mongoose Validator
+- Mongoose Validator
 https://www.npmjs.com/package/mongoose-unique-validator
 npm i --save mongoose-unique-validator
 
-bcrypt
+- bcrypt
 https://www.npmjs.com/package/bcrypt
 npm i --save bcrypt
 
-Underscore
+- Underscore
 https://underscorejs.org/
 npm i --save underscore
 
-jsonwebtoken
+- jsonwebtoken
 https://www.npmjs.com/package/jsonwebtoken
 npm i --save jsonwebtoken
+
+## Documentation
+
+https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations
+https://www.npmjs.com/package/connect-history-api-fallback
 
 Heroku deployed on:
 [...]
